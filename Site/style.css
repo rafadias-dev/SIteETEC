@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif; /* Fonte clássica para joalherias */
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #f1f1f1;
+}
+
+header {
+    background-color: #000;
+    border-bottom: 2px solid #D4AF37;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: #D4AF37;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: #fff;
+    margin-left: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+nav button:hover {
+    color: #D4AF37;
+}
+
+main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Esconde as seções não ativas */
+section {
+    display: none;
+}
+section.active-section {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.section-title {
+    color: #D4AF37;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Grid de Produtos */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: #111;
+    border: 1px solid #333;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #D4AF37;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    background-color: #222; /* Fundo enquanto imagem não carrega */
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #D4AF37;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.btn-gold {
+    background-color: #D4AF37;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.btn-gold:hover {
+    background-color: #FFDF00;
+}
+
+.btn-icon {
+    background: none;
+    border: 1px solid #D4AF37;
+    color: #D4AF37;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: 0.3s;
+}
+
+.btn-icon:hover {
+    background: #D4AF37;
+    color: #000;
+}
+
+/* Carrinho */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding: 15px 0;
+}
+.cart-total {
+    margin-top: 30px;
+    text-align: right;
+}
+
+/* Formulário */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #111;
+    padding: 30px;
+    border: 1px solid #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #D4AF37;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="tel"],
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    border: 1px solid #444;
+    color: #fff;
+}
+
+.input-group input:focus, .input-group select:focus {
+    outline: none;
+    border-color: #D4AF37;
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}

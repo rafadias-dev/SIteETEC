@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurum Joalheria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">AURUM</div>
+        <nav>
+            <button onclick="showSection('produtos')">Vitrine</button>
+            <button onclick="showSection('favoritos')"><i class="fas fa-heart"></i> Favoritos (<span id="fav-count">0</span>)</button>
+            <button onclick="showSection('carrinho')"><i class="fas fa-shopping-cart"></i> Carrinho (<span id="cart-count">0</span>)</button>
+            <button onclick="showSection('login')"><i class="fas fa-user"></i> Cadastro</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="produtos" class="active-section">
+            <h1 class="section-title">Nossas Peças</h1>
+            <div class="grid-container" id="product-grid"></div>
+        </section>
+
+        <section id="favoritos">
+            <h1 class="section-title">Meus Favoritos</h1>
+            <div class="grid-container" id="favorites-grid"></div>
+        </section>
+
+        <section id="carrinho">
+            <h1 class="section-title">Carrinho de Compras</h1>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <h3>Total: R$ <span id="cart-total-price">0.00</span></h3>
+                <button class="btn-gold" onclick="alert('Finalizando compra...')">Finalizar Compra</button>
+            </div>
+        </section>
+
+        <section id="login">
+            <h1 class="section-title">Crie sua Conta</h1>
+            <div class="form-container">
+                <form id="cadastro-form" onsubmit="event.preventDefault(); alert('Cadastro realizado com sucesso!');">
+                    
+                    <div class="input-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="numero">Número do Celular:</label>
+                        <input type="tel" id="numero" placeholder="(XX) XXXXX-XXXX" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" id="bairro" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="estado-civil">Estado Civil:</label>
+                        <select id="estado-civil" required>
+                            <option value="">Selecione...</option>
+                            <option value="solteiro">Solteiro(a)</option>
+                            <option value="casado">Casado(a)</option>
+                            <option value="divorciado">Divorciado(a)</option>
+                            <option value="viuvo">Viúvo(a)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Gênero:</label>
+                        <div class="radio-group">
+                            <input type="radio" id="fem" name="genero" value="feminino" required> <label for="fem">Feminino</label>
+                            <input type="radio" id="masc" name="genero" value="masculino"> <label for="masc">Masculino</label>
+                            <input type="radio" id="outro" name="genero" value="outro"> <label for="outro">Outro</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-gold" style="width: 100%;">Cadastrar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
